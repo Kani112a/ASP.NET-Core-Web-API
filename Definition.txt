@@ -1,0 +1,80 @@
+gitHub.com/KevinDockx/AspNetCoreWebApiFundamentals
+GitHub.com/dotnet/aspnetcore
+https://learn.microsoft.com/en-us/dotnet/core/tools/
+
+
+Launch settings.json
+Used to setup the environment for local machine development.
+
+
+
+dotnet run   ---> default http
+dotnet run --launch-profile https
+
+
+
+ASP.NET Core :
+Cross-platform
+high performance
+open source
+modern,cloud-enabled,internet-connected apps
+
+program.cs is the starting point of application
+
+
+MVC:
+MVC (Model–View–Controller) is a software design pattern used to develop applications by separating them into three main components.
+
+👉 It helps in clean code structure, easy maintenance, and scalability.
+
+Model → Handles data and business logic
+View → Displays UI (what user sees)
+Controller → Handles user input and controls flow
+
+
+Simple Way:MVC = Organizing your app into Data (Model) + UI (View) + Logic (Controller)
+
+
+EX:
+Model:
+public class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
+
+View:
+<h2>Student Details</h2>
+<p>Name: @Model.Name</p>
+
+Controller:
+public class StudentController : Controller
+{
+    public IActionResult Index()
+    {
+        Student s = new Student()
+        {
+            Id = 1,
+            Name = "Pavithra"
+        };
+
+        return View(s);
+    }
+}
+
+
+
+MVC Work Flow:
+User sends request (browser)
+Controller receives request
+Controller calls Model (gets data)
+Controller sends data to View
+View displays output to user
+
+Easy rememberance:
+Controllers → .cs
+Views → .cshtml
+Models → .cs
+
+

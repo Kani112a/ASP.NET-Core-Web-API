@@ -16,14 +16,14 @@ if (app.Environment.IsDevelopment())  //the environment variable refers developm
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
-//app.UseAuthorization();
+app.UseAuthorization();
 
-//app.MapControllers();
+app.MapControllers();
 
-app.Run(async (context) => {
-    await context.Response.WriteAsync("Hello World!!");
-});
+//app.Run(async (context) => {
+//    await context.Response.WriteAsync("Hello World!!");
+//});  //Basic hello world code 
 
 app.Run();

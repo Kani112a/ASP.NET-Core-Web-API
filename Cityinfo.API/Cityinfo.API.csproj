@@ -10,8 +10,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />  <!--implementation of openAPI or Swagger-->
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
