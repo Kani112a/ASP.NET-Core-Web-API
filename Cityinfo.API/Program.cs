@@ -18,9 +18,14 @@ if (app.Environment.IsDevelopment())  //the environment variable refers developm
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
+
 app.UseAuthorization();
 
-app.MapControllers();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 //app.Run(async (context) => {
 //    await context.Response.WriteAsync("Hello World!!");
