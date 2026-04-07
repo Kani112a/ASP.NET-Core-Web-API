@@ -18,14 +18,14 @@
                         new PointOfInterestDto()
                         {
                             Id=1,
-                            Name="",
-                            Description=""
+                            Name="Theerthamalai Temple",
+                            Description="It blends hill heritage with a calm elevation walk"
                         },
                         new PointOfInterestDto()
                         {
                             Id=2,
-                            Name="",
-                            Description=""
+                            Name="Adhiyamankottai Fort",
+                            Description="Carrying the district’s medieval stone-defense identity"
                         }
                     }
                 },
@@ -39,14 +39,14 @@
                         new PointOfInterestDto()
                         {
                             Id=3,
-                            Name="",
-                            Description=""
+                            Name="Yercaud",
+                            Description="Tourist Place"
                         },
                         new PointOfInterestDto()
                         {
                             Id=4,
-                            Name="",
-                            Description=""
+                            Name="Mettur Dam",
+                            Description="One of the most famous place"
                         }
                     }
                 },
@@ -60,14 +60,14 @@
                         new PointOfInterestDto()
                         {
                             Id=5,
-                            Name="",
-                            Description=""
+                            Name="Thindal Murugan Temple",
+                            Description="Devotional Place"
                         },
                         new PointOfInterestDto()
                         {
                             Id=6,
-                            Name="",
-                            Description=""
+                            Name="Vellode Bird Sanctuary",
+                            Description="Sanctuary with boat riding"
                         }
                     }
                 }
