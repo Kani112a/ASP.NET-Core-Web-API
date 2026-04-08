@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(options=>
 {
     options.ReturnHttpNotAcceptable = true;
-}).AddXmlDataContractSerializerFormatters();  //through postman we need to accept the response in a additional format like xml addcontrollers like this or
+}).AddNewtonsoftJson()
+.AddXmlDataContractSerializerFormatters();  //through postman we need to accept the response in a additional format like xml addcontrollers like this or
                                               //need to send a response like not acceptable remove AddXmlDataContractSerializerFormatters
 
 //manipulating problem details response
