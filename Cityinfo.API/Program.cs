@@ -1,11 +1,16 @@
+using Cityinfo.API.Service;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Primitives;
+using Serilog;
+
+Log.Logger= new LoggerConfiguration().MinimumLevel.Debug().WriteTo.Console().WriteTo.File("logs/cityinfo.txt", rollingInterval:RollingInterval.Day).CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Logging.ClearProviders();
-builder.Logging.AddConsole();
+//builder.Logging.ClearProviders();
+//builder.Logging.AddConsole();
+builder.Host.UseSerilog();
 builder.Services.AddControllers(options=>
 {
     options.ReturnHttpNotAcceptable = true;
@@ -37,6 +42,9 @@ builder.Services.AddProblemDetails();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>(); //to support while calling the file in plain/text content type
+builder.Services.AddTransient<LocalMailService>(); //AddTransient is lightweight and stateless services
+//builder.Services.AddScoped //created once per request
+//builder.Services.AddSingleton //lifetime services are created the first time they are requested
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
