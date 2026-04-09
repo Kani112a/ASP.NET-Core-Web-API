@@ -4,14 +4,15 @@ using Microsoft.Extensions.Primitives;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 builder.Services.AddControllers(options=>
 {
     options.ReturnHttpNotAcceptable = true;
 }).AddNewtonsoftJson()
 .AddXmlDataContractSerializerFormatters();  //through postman we need to accept the response in a additional format like xml addcontrollers like this or
-                                              //need to send a response like not acceptable remove AddXmlDataContractSerializerFormatters
-
+                                            //need to send a response like not acceptable remove AddXmlDataContractSerializerFormatters
+builder.Services.AddProblemDetails();
 //manipulating problem details response
 //builder.Services.AddProblemDetails(options =>  
 //{
@@ -37,7 +38,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>(); //to support while calling the file in plain/text content type
 var app = builder.Build();
-
+if (app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler();
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())  //the environment variable refers development //production or stagging
 {
