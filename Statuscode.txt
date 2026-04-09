@@ -9,6 +9,7 @@ Status Code :
 401 - Authorization (Invalid credentials)
 403 - Forbidden (Authentication succeeded but authenticated user has no access)
 404 - Not Found (Request resource doesnt exist)
+405 - Method Not Allowed
 409 - conflict (Conflict between two simultaneous updates)
 
 500 - server error
