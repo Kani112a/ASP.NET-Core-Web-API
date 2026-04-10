@@ -42,10 +42,14 @@ builder.Services.AddProblemDetails();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>(); //to support while calling the file in plain/text content type
-builder.Services.AddTransient<LocalMailService>(); //AddTransient is lightweight and stateless services
-//builder.Services.AddScoped //created once per request
-//builder.Services.AddSingleton //lifetime services are created the first time they are requested
-var app = builder.Build();
+#if DEBUG
+builder.Services.AddTransient< IMailService, LocalMailService>(); //AddTransient is lightweight and stateless services
+#else
+builder.Services.AddTransient<IMailService, CloudMailService>();
+#endif
+    //builder.Services.AddScoped //created once per request
+    //builder.Services.AddSingleton //lifetime services are created the first time they are requested
+    var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler();
