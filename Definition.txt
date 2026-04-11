@@ -89,3 +89,11 @@ better testability
 Transient-services created each time requested, light weight stateless services
 Scoped-created once per request 
 singleton-created the first time they are requested
+
+
+Entities:
+Entity files is to create a database structure.
+
+In Console package Manager 
+add-migration (Name)
+update-database --To get added into database using extension add the sqlite and sql compatible tool to install

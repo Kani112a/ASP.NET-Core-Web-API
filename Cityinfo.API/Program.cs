@@ -1,6 +1,8 @@
+using Cityinfo.API.DbContexts;
 using Cityinfo.API.Model;
 using Cityinfo.API.Service;
 using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Primitives;
 using Serilog;
 
@@ -44,6 +46,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>(); //to support while calling the file in plain/text content type
 builder.Services.AddSingleton<CitiesDataStore>();
+builder.Services.AddDbContext<cityInfoContext>(dbContextOptions=>dbContextOptions.UseSqlite("Data Source=cityinfo.db"));
 #if DEBUG
 builder.Services.AddTransient< IMailService, LocalMailService>(); //AddTransient is lightweight and stateless services
 #else
