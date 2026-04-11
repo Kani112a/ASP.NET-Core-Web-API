@@ -78,3 +78,14 @@ Views → .cshtml
 Models → .cs
 
 
+Dependency injection:
+-specialization of inversion of control
+loose coupling
+less code changes
+better testability
+
+
+
+Transient-services created each time requested, light weight stateless services
+Scoped-created once per request 
+singleton-created the first time they are requested
