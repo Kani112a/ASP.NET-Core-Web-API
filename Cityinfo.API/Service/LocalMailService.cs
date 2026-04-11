@@ -2,8 +2,13 @@
 {
     public class LocalMailService : IMailService
     {
-        private string _frommail = "pavithrakanishka2002@gmail.com";
-        private string _tomail = "kanishkadurai03@gmail.com";
+        private string _frommail = string.Empty;
+        private string _tomail = string.Empty;
+        public LocalMailService(IConfiguration configuration)
+        {
+            _frommail = configuration["mailSettings:mailFromAddress"];
+            _tomail = configuration["mailSettings:mailToAddress"];
+        }
         public void Send(string subject, string message)
         {
             Console.WriteLine($"Mail from {_frommail} to {_tomail}, with {nameof(LocalMailService)}");
