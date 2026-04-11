@@ -46,7 +46,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>(); //to support while calling the file in plain/text content type
 builder.Services.AddSingleton<CitiesDataStore>();
-builder.Services.AddDbContext<cityInfoContext>(dbContextOptions=>dbContextOptions.UseSqlite("Data Source=cityinfo.db"));
+builder.Services.AddDbContext<cityInfoContext>(dbContextOptions => dbContextOptions.UseSqlite(builder.Configuration["ConnectionStrings:CityInfoDbConnectionString"]));
 #if DEBUG
 builder.Services.AddTransient< IMailService, LocalMailService>(); //AddTransient is lightweight and stateless services
 #else
