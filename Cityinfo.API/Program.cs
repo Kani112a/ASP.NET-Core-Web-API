@@ -54,6 +54,8 @@ builder.Services.AddTransient<IMailService, CloudMailService>();
 #endif
     //builder.Services.AddScoped //created once per request
     //builder.Services.AddSingleton //lifetime services are created the first time they are requested
+    builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {

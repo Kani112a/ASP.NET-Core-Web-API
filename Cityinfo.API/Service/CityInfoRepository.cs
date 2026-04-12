@@ -16,17 +16,24 @@ namespace Cityinfo.API.Service
             //throw new NotImplementedException();
             return await _context.Cities.OrderBy(c=>c.Name ).ToListAsync();
         }
-        public Task<City?> GetCity(int cityId)
+        public async Task<City?> GetCity(int cityId, bool includePointsOfInterest)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            if (includePointsOfInterest)
+            {
+                return await _context.Cities.Include(c=>c.pointOfInterests).Where(c=>c.Id == cityId).FirstOrDefaultAsync();
+            }
+            return await _context.Cities.Where(c => c.Id == cityId).FirstOrDefaultAsync();
         }
-        public Task<IEnumerable<pointOfInterest>> GetPointOfInterestAsync(int cityId)
+        public async Task<IEnumerable<pointOfInterest>> GetPointOfInterestAsync(int cityId)
         {
-            throw new NotImplementedException();
+            return await _context.pointOfInterests.Where(p => p.CityId == cityId).ToListAsync();    
+            //throw new NotImplementedException();
         }
-        public Task<pointOfInterest?> GetPointsOfInterestAsync(int cityId, int pointOfInterestId)
+        public async Task<pointOfInterest?> GetPointsOfInterestAsync(int cityId, int pointOfInterestId)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return await _context.pointOfInterests.Where(p => p.CityId==cityId && p.Id== pointOfInterestId).FirstOrDefaultAsync();
         }
     }
 }
