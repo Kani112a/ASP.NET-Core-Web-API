@@ -7,6 +7,7 @@ namespace Cityinfo.API.NewFolder
         public CityProfile()
         {
             CreateMap<Entities.City, Model.CityWithoutPointOfInterestDto>();
+            CreateMap<Entities.City, Model.CityDto>();
         }
     }
 }

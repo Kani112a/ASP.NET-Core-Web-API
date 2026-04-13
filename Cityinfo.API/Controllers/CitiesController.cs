@@ -46,17 +46,21 @@ namespace Cityinfo.API.Controllers
             return Ok(_mapper.Map<IEnumerable<CityWithoutPointOfInterestDto>>(cityEntities));
         }
         [HttpGet("{id}")]
-        public ActionResult<CityDto> GetCity(int id)
+        public async Task<IActionResult> GetCity(int id, bool includePointsOfInterest = false)
         {
-            //var citiestoreturn = _cityDataStore.Cities.FirstOrDefault(c => c.Id == id);
-            //if (citiestoreturn == null)
-            //{
-            //    return NotFound();
-            //}
-            //return Ok(citiestoreturn);  // to return status code
-            return Ok();
-           
-            //return new JsonResult(CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == id)); // to return the output 
+            var city = await _cityInfoRepository.GetCityAsync(id, includePointsOfInterest);
+
+            if (city == null)
+            {
+                return NotFound();
+            }
+
+            if (includePointsOfInterest)
+            {
+                return Ok(_mapper.Map<CityDto>(city)); // WITH POI
+            }
+
+            return Ok(_mapper.Map<CityWithoutPointOfInterestDto>(city)); // WITHOUT POI
         }
     }
 }

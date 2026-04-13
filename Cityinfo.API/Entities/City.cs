@@ -13,7 +13,7 @@ namespace Cityinfo.API.Entities
         public string? Name { get; set; }
         [MaxLength(200)]
         public string? Description { get; set; }
-        public ICollection<pointOfInterest> pointOfInterests { get; set; } = new List<pointOfInterest>();
+        public ICollection<pointOfInterest> PointsOfInterest { get; set; } = new List<pointOfInterest>();
         public City(string name)
         {
             Name = name;
