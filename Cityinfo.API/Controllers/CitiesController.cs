@@ -3,6 +3,8 @@ using Cityinfo.API.Model;
 using Cityinfo.API.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Cityinfo.API.Controllers
@@ -15,7 +17,7 @@ namespace Cityinfo.API.Controllers
        // private readonly CitiesDataStore _cityDataStore;
         private readonly ICityInfoRepository _cityInfoRepository;
         private readonly IMapper _mapper;
-
+        const int maxCitiesPageSize=20;
         public CitiesController(ICityInfoRepository cityInfoRepository, IMapper mapper)
         {
             _cityInfoRepository = cityInfoRepository ?? throw new Exception(nameof(cityInfoRepository));
@@ -28,10 +30,16 @@ namespace Cityinfo.API.Controllers
         //{
         //    return new JsonResult(CitiesDataStore.Current.Cities);
         //}
-        public async Task<ActionResult<IEnumerable<CityWithoutPointOfInterestDto>>> GetCities()
+        public async Task<ActionResult<IEnumerable<CityWithoutPointOfInterestDto>>> GetCities(string? name, string? searchQuery, int pageNumber=1, int pageSize=10)
         {
+            if (pageSize > maxCitiesPageSize)
+            {
+                pageSize = maxCitiesPageSize;
+            }
             //return Ok(_cityDataStore.Cities);
-            var cityEntities= await _cityInfoRepository.GetCitiesAsync();
+            var (cityEntities,paginationMetadata)= await _cityInfoRepository.GetCitiesAsync(name, searchQuery, pageNumber, pageSize);
+            Response.Headers.Append("X-Pagination",
+                JsonSerializer.Serialize(paginationMetadata));
             //var result = new List<CityWithoutPointOfInterestDto>();
             //foreach (var cityEntity in cityEntities)
             //{
