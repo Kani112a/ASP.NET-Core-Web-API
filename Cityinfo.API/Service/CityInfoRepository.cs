@@ -54,6 +54,10 @@ namespace Cityinfo.API.Service
         {
             return await _context.Cities.AnyAsync(c => c.Id == cityId);
         }
+        public async Task<bool> CityNameMatchesCityId(string? cityName, int cityId)
+        {
+            return await _context.Cities.AnyAsync(c => c.Id == cityId && c.Name == cityName);
+        }
         public async Task<IEnumerable<pointOfInterest>> GetPointOfInterestAsync(int cityId)
         {
             return await _context.PointsOfInterest.Where(p => p.CityId == cityId).ToListAsync();    

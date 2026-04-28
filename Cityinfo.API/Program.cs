@@ -3,8 +3,12 @@ using Cityinfo.API.Model;
 using Cityinfo.API.Service;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens.Experimental;
 using Serilog;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 Log.Logger= new LoggerConfiguration().MinimumLevel.Debug().WriteTo.Console().WriteTo.File("logs/cityinfo.txt", rollingInterval:RollingInterval.Day).CreateLogger();
 
@@ -56,6 +60,25 @@ builder.Services.AddTransient<IMailService, CloudMailService>();
     //builder.Services.AddSingleton //lifetime services are created the first time they are requested
     builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAuthentication("Bearer").AddJwtBearer(options=> {
+    options.TokenValidationParameters = new()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Authentication:Issuer"],
+        ValidAudience = builder.Configuration["Authentication:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Convert.FromBase64String(builder.Configuration["Authentication:SecretForKey"]))
+    };
+});
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("MustBeFromDharmapuri", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("city", "Dharmapuri");
+    });
+});
     var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
@@ -71,7 +94,7 @@ if (app.Environment.IsDevelopment())  //the environment variable refers developm
 app.UseHttpsRedirection();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Cityinfo.API.Model;
 using Cityinfo.API.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
 using System.Text.Json;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 namespace Cityinfo.API.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/cities")]
     //[Route("api/cities")]  //we can use but http is not supporting it is for https
     public class CitiesController : ControllerBase
