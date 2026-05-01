@@ -97,3 +97,5 @@ Entity files is to create a database structure.
 In Console package Manager 
 add-migration (Name)
 update-database --To get added into database using extension add the sqlite and sql compatible tool to install
+
+httprepl  -- test and explore REST APIs directly from the terminal
