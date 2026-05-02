@@ -79,12 +79,14 @@ Models → .cs
 
 
 Dependency injection:
+ASP.NET automatically injects the object.Don’t create objects manually
 -specialization of inversion of control
 loose coupling
 less code changes
 better testability
 
-
+Entity Framework Core:
+Entity Framework Core is an ORM (Object Relational Mapper),It lets you work with database using C# instead of SQL.
 
 Transient-services created each time requested, light weight stateless services
 Scoped-created once per request 
