@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 
 namespace Cityinfo.API.Controllers
 {
-    [Route("api/files")]
+    [Route("api/v{version:apiVersion}/files")]
     [ApiController]
     [Authorize]
     public class FileController : ControllerBase
@@ -17,6 +18,7 @@ namespace Cityinfo.API.Controllers
             _fileExtensionContentTypeProvider = fileExtensionContentTypeProvider ?? throw new System.ArgumentNullException(nameof(fileExtensionContentTypeProvider));
         }
         [HttpGet("{fileId}")]
+        [ApiVersion(0.1, Deprecated =true)]
         public ActionResult GetFile(string fileId)
         {
             var pathtofile = "User Access Management System (1) (2).pdf";

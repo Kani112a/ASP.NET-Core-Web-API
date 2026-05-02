@@ -1,0 +1,12 @@
+﻿@Cityinfo.API_HostAddress = http://localhost:5063
+
+@name=string
+@searchQuery=string
+GET {{Cityinfo.API_HostAddress}}/api/v{version:apiVersion}/cities?name={{name}}&searchQuery={{searchQuery}}
+
+###
+
+@cityId=0
+GET {{Cityinfo.API_HostAddress}}/api/v{version:apiVersion}/cities/{{cityId}}
+
+###

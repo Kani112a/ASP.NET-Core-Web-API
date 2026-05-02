@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Asp.Versioning;
+using AutoMapper;
 using Cityinfo.API.Entities;
 using Cityinfo.API.Model;
 using Cityinfo.API.Service;
@@ -10,8 +11,9 @@ using System.Threading.Tasks;
 
 namespace Cityinfo.API.Controllers
 {
-    [Route("api/cities/{cityId}/pointsofinterest")]
+    [Route("api/v{version:apiVersion}/cities/{cityId}/pointsofinterest")]
     [ApiController]
+    [ApiVersion(2)]
     [Authorize (Policy ="MustBeFromDharmapuri")]
     public class PointsOfInterestController : ControllerBase
     {
@@ -59,23 +61,43 @@ namespace Cityinfo.API.Controllers
             return Ok(_mapper.Map<PointOfInterestDto>(pointOfInterest));
         }
         [HttpPost]
-        public async Task<ActionResult<PointOfInterestDto>> CreatePointOfInterest(int cityId, pointOfInterestCreationDto pointOfInterest)
+        public async Task<ActionResult<PointOfInterestDto>> CreatePointOfInterest(
+    int cityId,
+    pointOfInterestCreationDto pointOfInterest)
         {
-            if(!await _cityInfoRepository.CityExistsAsync(cityId))
+            // ✅ Check city exists
+            if (!await _cityInfoRepository.CityExistsAsync(cityId))
             {
                 return NotFound();
             }
-            var finalpointofinterest = _mapper.Map<Entities.pointOfInterest>(pointOfInterest);
-            await _cityInfoRepository.AddPointOfInterestForCityAsync(cityId,finalpointofinterest);
+
+            // ✅ Check request body
+            if (pointOfInterest == null)
+            {
+                return BadRequest();
+            }
+
+            // ✅ Map DTO → Entity
+            var finalPointOfInterest = _mapper.Map<Entities.pointOfInterest>(pointOfInterest);
+
+            // ✅ Save
+            await _cityInfoRepository.AddPointOfInterestForCityAsync(cityId, finalPointOfInterest);
             await _cityInfoRepository.SaveChangesAsync();
-            var createdPointOfInterestToReturn = _mapper.Map<Model.PointOfInterestDto>(finalpointofinterest);
-            return CreatedAtRoute("GetPointOfInterest",
+
+            // ✅ Map Entity → DTO
+            var createdPointOfInterestToReturn =
+                _mapper.Map<PointOfInterestDto>(finalPointOfInterest);
+
+            // ✅ Return response
+            return CreatedAtRoute(
+                "GetPointOfInterest",
                 new
                 {
                     cityId = cityId,
-                    pointOfInterest = createdPointOfInterestToReturn.Id
+                    pointOfInterestId = createdPointOfInterestToReturn.Id
                 },
-                createdPointOfInterestToReturn);
+                createdPointOfInterestToReturn
+            );
         }
         [HttpPut("{pointofinterestid}")]
         public async Task<ActionResult> UpdatePointOfInterest(int cityId, int pointofInterestId, pointOfInterestForUpdateCtocs pointOfInterest)

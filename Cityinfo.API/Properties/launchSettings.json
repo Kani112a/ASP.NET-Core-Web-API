@@ -17,7 +17,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7092;http://localhost:5063"
+      "applicationUrl": "http://localhost:5063"  //to run on local to avoid ssl certificate issue
+     // "applicationUrl": "https://localhost:7092;http://localhost:5063"
     },
     "IIS Express": {
       "commandName": "IISExpress",

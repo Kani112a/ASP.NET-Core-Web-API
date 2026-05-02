@@ -1,0 +1,321 @@
+2026-04-30 19:43:47.606 +05:30 [DBG] Registered model binder providers, in the following order: ["Asp.Versioning.ApiVersionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-04-30 19:43:47.717 +05:30 [DBG] Hosting starting
+2026-04-30 19:43:47.732 +05:30 [INF] User profile is available. Using 'C:\Users\KANI\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-30 19:43:47.744 +05:30 [DBG] Reading data from file 'C:\Users\KANI\AppData\Local\ASP.NET\DataProtection-Keys\key-7bb7db27-4852-4d9d-8c15-79cbb8b17a21.xml'.
+2026-04-30 19:43:47.774 +05:30 [DBG] Reading data from file 'C:\Users\KANI\AppData\Local\ASP.NET\DataProtection-Keys\key-ad0498ae-84a9-457c-85ed-f42f2e6dfc23.xml'.
+2026-04-30 19:43:47.915 +05:30 [DBG] Found key {7bb7db27-4852-4d9d-8c15-79cbb8b17a21}.
+2026-04-30 19:43:47.930 +05:30 [DBG] Found key {ad0498ae-84a9-457c-85ed-f42f2e6dfc23}.
+2026-04-30 19:43:47.944 +05:30 [DBG] Considering key {ad0498ae-84a9-457c-85ed-f42f2e6dfc23} with expiration date 2026-07-27 01:30:07Z as default key.
+2026-04-30 19:43:48.001 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-30 19:43:48.004 +05:30 [DBG] Decrypting secret element using Windows DPAPI.
+2026-04-30 19:43:48.007 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-30 19:43:48.017 +05:30 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-04-30 19:43:48.019 +05:30 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-04-30 19:43:48.121 +05:30 [DBG] Using key {ad0498ae-84a9-457c-85ed-f42f2e6dfc23} as the default key.
+2026-04-30 19:43:48.123 +05:30 [DBG] Key ring with default key {ad0498ae-84a9-457c-85ed-f42f2e6dfc23} was loaded during application startup.
+2026-04-30 19:43:48.129 +05:30 [DBG] Middleware loaded
+2026-04-30 19:43:48.132 +05:30 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16509 B).
+2026-04-30 19:43:48.133 +05:30 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-04-30 19:43:48.183 +05:30 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-04-30 19:43:48.227 +05:30 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2026-04-30 19:43:48.269 +05:30 [INF] Now listening on: https://localhost:7092
+2026-04-30 19:43:48.272 +05:30 [INF] Now listening on: http://localhost:5063
+2026-04-30 19:43:48.274 +05:30 [DBG] Loaded hosting startup assembly Cityinfo.API
+2026-04-30 19:43:48.280 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-04-30 19:43:48.283 +05:30 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-04-30 19:43:48.287 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-04-30 19:43:48.343 +05:30 [DBG] Connection id "0HNL6OAP9I7PV" received FIN.
+2026-04-30 19:43:48.495 +05:30 [DBG] Connection id "0HNL6OAP9I7PV" accepted.
+2026-04-30 19:43:48.506 +05:30 [DBG] Connection id "0HNL6OAP9I7PV" started.
+2026-04-30 19:43:48.522 +05:30 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2026-04-30 19:43:48.582 +05:30 [DBG] Connection id "0HNL6OAP9I7PV" stopped.
+2026-04-30 19:43:48.590 +05:30 [DBG] Connection id "0HNL6OAP9I7PV" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:43:48.599 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-30 19:43:48.704 +05:30 [INF] Hosting environment: Development
+2026-04-30 19:43:48.705 +05:30 [INF] Content root path: C:\Users\KANI\source\repos\Cityinfo\Cityinfo.API
+2026-04-30 19:43:48.706 +05:30 [DBG] Hosting started
+2026-04-30 19:43:49.319 +05:30 [DBG] Connection id "0HNL6OAP9I7Q0" accepted.
+2026-04-30 19:43:49.623 +05:30 [DBG] Connection id "0HNL6OAP9I7Q0" started.
+2026-04-30 19:43:49.802 +05:30 [DBG] Connection id "0HNL6OAP9I7Q0" received FIN.
+2026-04-30 19:43:49.804 +05:30 [DBG] Connection id "0HNL6OAP9I7Q1" accepted.
+2026-04-30 19:43:49.806 +05:30 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2026-04-30 19:43:49.966 +05:30 [DBG] Connection id "0HNL6OAP9I7Q1" started.
+2026-04-30 19:43:50.098 +05:30 [DBG] Connection id "0HNL6OAP9I7Q0" stopped.
+2026-04-30 19:43:50.196 +05:30 [DBG] Connection id "0HNL6OAP9I7Q1" received FIN.
+2026-04-30 19:43:50.197 +05:30 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2026-04-30 19:43:50.197 +05:30 [DBG] Connection id "0HNL6OAP9I7Q2" accepted.
+2026-04-30 19:43:50.227 +05:30 [DBG] Connection id "0HNL6OAP9I7Q0" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:43:50.572 +05:30 [DBG] Connection id "0HNL6OAP9I7Q1" stopped.
+2026-04-30 19:43:51.304 +05:30 [DBG] Connection id "0HNL6OAP9I7Q2" started.
+2026-04-30 19:43:52.020 +05:30 [DBG] Connection id "0HNL6OAP9I7Q1" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:43:52.049 +05:30 [DBG] Connection 0HNL6OAP9I7Q2 established using the following protocol: "Tls13"
+2026-04-30 19:43:52.489 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger - null null
+2026-04-30 19:43:53.270 +05:30 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-04-30 19:43:53.414 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger - 301 0 null 919.938ms
+2026-04-30 19:43:53.436 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/index.html - null null
+2026-04-30 19:43:54.730 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-04-30 19:43:54.798 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-04-30 19:43:54.826 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2026-04-30 19:43:54.830 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/swagger-ui-bundle.js - null null
+2026-04-30 19:43:54.830 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/swagger-ui.css - null null
+2026-04-30 19:43:54.830 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-30 19:43:54.830 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-30 19:43:54.830 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2026-04-30 19:43:54.833 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2026-04-30 19:43:54.990 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-04-30 19:43:55.000 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-04-30 19:43:55.050 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-04-30 19:43:55.086 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-04-30 19:43:55.096 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/index.html - 200 null text/html;charset=utf-8 1659.8534ms
+2026-04-30 19:43:55.099 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 269.3435ms
+2026-04-30 19:43:55.102 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/swagger-ui.css - 200 152034 text/css 272.3136ms
+2026-04-30 19:43:55.114 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 283.9773ms
+2026-04-30 19:43:55.122 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 291.4613ms
+2026-04-30 19:43:55.203 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 372.4098ms
+2026-04-30 19:43:55.339 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/0.1/swagger.json - null null
+2026-04-30 19:43:55.392 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/0.1/swagger.json - 200 null application/json;charset=utf-8 52.6716ms
+2026-04-30 19:44:00.232 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/2.0/swagger.json - null null
+2026-04-30 19:44:00.537 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/2.0/swagger.json - 200 null application/json;charset=utf-8 304.3223ms
+2026-04-30 19:44:02.407 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/2.0/swagger.json - null null
+2026-04-30 19:44:02.491 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/2.0/swagger.json - 200 null application/json;charset=utf-8 83.6435ms
+2026-04-30 19:44:03.427 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/favicon.ico - null null
+2026-04-30 19:44:03.635 +05:30 [DBG] The request path  does not match the path filter
+2026-04-30 19:44:03.671 +05:30 [DBG] No candidates found for the request path '/favicon.ico'
+2026-04-30 19:44:03.776 +05:30 [DBG] Request did not match any endpoints
+2026-04-30 19:44:03.803 +05:30 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-04-30 19:44:03.841 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/favicon.ico - 404 0 null 414.511ms
+2026-04-30 19:44:03.856 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7092/favicon.ico, Response status code: 404
+2026-04-30 19:44:53.423 +05:30 [DBG] Connection id "0HNL6OAP9I7Q3" accepted.
+2026-04-30 19:44:53.485 +05:30 [DBG] Connection id "0HNL6OAP9I7Q3" started.
+2026-04-30 19:44:53.551 +05:30 [DBG] Connection 0HNL6OAP9I7Q3 established using the following protocol: "Tls13"
+2026-04-30 19:44:53.581 +05:30 [DBG] Connection id "0HNL6OAP9I7Q3" reset.
+2026-04-30 19:44:53.582 +05:30 [DBG] Connection id "0HNL6OAP9I7Q3" request processing ended abnormally.
+System.IO.IOException: The decryption operation failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.IO.Pipelines.StreamPipeReader.<ReadInternalAsync>g__Core|40_0(StreamPipeReader reader, Nullable`1 minimumSize, CancellationTokenSource tokenSource, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:44:53.607 +05:30 [DBG] Connection id "0HNL6OAP9I7Q3" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:44:53.717 +05:30 [DBG] Connection id "0HNL6OAP9I7Q3" disconnecting.
+2026-04-30 19:44:53.722 +05:30 [DBG] Connection id "0HNL6OAP9I7Q3" stopped.
+2026-04-30 19:45:20.156 +05:30 [DBG] Connection id "0HNL6OAP9I7Q4" accepted.
+2026-04-30 19:45:20.178 +05:30 [DBG] Connection id "0HNL6OAP9I7Q4" started.
+2026-04-30 19:45:20.238 +05:30 [DBG] Connection 0HNL6OAP9I7Q4 established using the following protocol: "Tls13"
+2026-04-30 19:45:20.271 +05:30 [DBG] Connection id "0HNL6OAP9I7Q4" request processing ended abnormally.
+System.IO.IOException: The decryption operation failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.IO.Pipelines.StreamPipeReader.<ReadInternalAsync>g__Core|40_0(StreamPipeReader reader, Nullable`1 minimumSize, CancellationTokenSource tokenSource, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:45:20.272 +05:30 [DBG] Connection id "0HNL6OAP9I7Q4" reset.
+2026-04-30 19:45:20.280 +05:30 [DBG] Connection id "0HNL6OAP9I7Q5" accepted.
+2026-04-30 19:45:20.280 +05:30 [DBG] Connection id "0HNL6OAP9I7Q4" disconnecting.
+2026-04-30 19:45:20.285 +05:30 [DBG] Connection id "0HNL6OAP9I7Q5" started.
+2026-04-30 19:45:20.291 +05:30 [DBG] Connection id "0HNL6OAP9I7Q4" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:45:20.298 +05:30 [DBG] Connection 0HNL6OAP9I7Q5 established using the following protocol: "Tls13"
+2026-04-30 19:45:20.300 +05:30 [DBG] Connection id "0HNL6OAP9I7Q5" reset.
+2026-04-30 19:45:20.302 +05:30 [DBG] Connection id "0HNL6OAP9I7Q6" accepted.
+2026-04-30 19:45:20.303 +05:30 [DBG] Connection id "0HNL6OAP9I7Q5" request processing ended abnormally.
+System.IO.IOException: The decryption operation failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.IO.Pipelines.StreamPipeReader.<ReadInternalAsync>g__Core|40_0(StreamPipeReader reader, Nullable`1 minimumSize, CancellationTokenSource tokenSource, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:45:20.304 +05:30 [DBG] Connection id "0HNL6OAP9I7Q5" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:45:20.305 +05:30 [DBG] Connection id "0HNL6OAP9I7Q4" stopped.
+2026-04-30 19:45:20.310 +05:30 [DBG] Connection id "0HNL6OAP9I7Q6" started.
+2026-04-30 19:45:20.555 +05:30 [DBG] Connection id "0HNL6OAP9I7Q5" disconnecting.
+2026-04-30 19:45:20.564 +05:30 [DBG] Connection id "0HNL6OAP9I7Q5" stopped.
+2026-04-30 19:45:20.566 +05:30 [DBG] Connection 0HNL6OAP9I7Q6 established using the following protocol: "Tls13"
+2026-04-30 19:45:20.568 +05:30 [DBG] Connection id "0HNL6OAP9I7Q6" reset.
+2026-04-30 19:45:20.571 +05:30 [DBG] Connection id "0HNL6OAP9I7Q6" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:45:20.573 +05:30 [DBG] Connection id "0HNL6OAP9I7Q6" disconnecting.
+2026-04-30 19:45:20.574 +05:30 [DBG] Connection id "0HNL6OAP9I7Q6" stopped.
+2026-04-30 19:45:50.896 +05:30 [DBG] Connection id "0HNL6OAP9I7Q7" accepted.
+2026-04-30 19:45:50.972 +05:30 [DBG] Connection id "0HNL6OAP9I7Q7" started.
+2026-04-30 19:45:51.033 +05:30 [DBG] Connection 0HNL6OAP9I7Q7 established using the following protocol: "Tls13"
+2026-04-30 19:45:51.034 +05:30 [DBG] Connection id "0HNL6OAP9I7Q7" reset.
+2026-04-30 19:45:51.039 +05:30 [DBG] Connection id "0HNL6OAP9I7Q7" request processing ended abnormally.
+System.IO.IOException: The decryption operation failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.IO.Pipelines.StreamPipeReader.<ReadInternalAsync>g__Core|40_0(StreamPipeReader reader, Nullable`1 minimumSize, CancellationTokenSource tokenSource, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:45:51.084 +05:30 [DBG] Connection id "0HNL6OAP9I7Q7" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:45:51.319 +05:30 [DBG] Connection id "0HNL6OAP9I7Q7" disconnecting.
+2026-04-30 19:45:51.325 +05:30 [DBG] Connection id "0HNL6OAP9I7Q7" stopped.
+2026-04-30 19:46:15.465 +05:30 [DBG] Connection id "0HNL6OAP9I7Q2" is closing.
+2026-04-30 19:46:15.513 +05:30 [DBG] Connection id "0HNL6OAP9I7Q2" is closed. The last processed stream ID was 21.
+2026-04-30 19:46:15.517 +05:30 [DBG] The connection queue processing loop for 0HNL6OAP9I7Q2 completed.
+2026-04-30 19:46:15.518 +05:30 [DBG] Connection id "0HNL6OAP9I7Q2" received FIN.
+2026-04-30 19:46:15.519 +05:30 [DBG] Connection id "0HNL6OAP9I7Q2" stopped.
+2026-04-30 19:46:15.526 +05:30 [DBG] Connection id "0HNL6OAP9I7Q2" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:48:01.816 +05:30 [DBG] Connection id "0HNL6OAP9I7Q8" accepted.
+2026-04-30 19:48:01.821 +05:30 [DBG] Connection id "0HNL6OAP9I7Q8" started.
+2026-04-30 19:48:01.832 +05:30 [DBG] Connection 0HNL6OAP9I7Q8 established using the following protocol: "Tls13"
+2026-04-30 19:48:01.834 +05:30 [DBG] Connection id "0HNL6OAP9I7Q8" reset.
+2026-04-30 19:48:01.838 +05:30 [DBG] Connection id "0HNL6OAP9I7Q8" request processing ended abnormally.
+System.IO.IOException: The decryption operation failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.IO.Pipelines.StreamPipeReader.<ReadInternalAsync>g__Core|40_0(StreamPipeReader reader, Nullable`1 minimumSize, CancellationTokenSource tokenSource, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:48:01.841 +05:30 [DBG] Connection id "0HNL6OAP9I7Q8" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:48:01.851 +05:30 [DBG] Connection id "0HNL6OAP9I7Q8" disconnecting.
+2026-04-30 19:48:01.853 +05:30 [DBG] Connection id "0HNL6OAP9I7Q8" stopped.
+2026-04-30 19:48:24.248 +05:30 [DBG] Connection id "0HNL6OAP9I7Q9" accepted.
+2026-04-30 19:48:24.260 +05:30 [DBG] Connection id "0HNL6OAP9I7Q9" started.
+2026-04-30 19:48:24.268 +05:30 [DBG] Connection 0HNL6OAP9I7Q9 established using the following protocol: "Tls13"
+2026-04-30 19:48:24.291 +05:30 [DBG] Connection id "0HNL6OAP9I7Q9" request processing ended abnormally.
+System.IO.IOException: The decryption operation failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.IO.Pipelines.StreamPipeReader.<ReadInternalAsync>g__Core|40_0(StreamPipeReader reader, Nullable`1 minimumSize, CancellationTokenSource tokenSource, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:48:24.291 +05:30 [DBG] Connection id "0HNL6OAP9I7Q9" reset.
+2026-04-30 19:48:24.297 +05:30 [DBG] Connection id "0HNL6OAP9I7QA" accepted.
+2026-04-30 19:48:24.301 +05:30 [DBG] Connection id "0HNL6OAP9I7Q9" disconnecting.
+2026-04-30 19:48:24.308 +05:30 [DBG] Connection id "0HNL6OAP9I7QA" started.
+2026-04-30 19:48:24.310 +05:30 [DBG] Connection id "0HNL6OAP9I7Q9" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:48:24.315 +05:30 [DBG] Connection 0HNL6OAP9I7QA established using the following protocol: "Tls13"
+2026-04-30 19:48:24.316 +05:30 [DBG] Connection id "0HNL6OAP9I7QA" reset.
+2026-04-30 19:48:24.320 +05:30 [DBG] Connection id "0HNL6OAP9I7QA" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:48:24.318 +05:30 [DBG] Connection id "0HNL6OAP9I7QA" request processing ended abnormally.
+System.IO.IOException: The decryption operation failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.IO.Pipelines.StreamPipeReader.<ReadInternalAsync>g__Core|40_0(StreamPipeReader reader, Nullable`1 minimumSize, CancellationTokenSource tokenSource, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:48:24.320 +05:30 [DBG] Connection id "0HNL6OAP9I7Q9" stopped.
+2026-04-30 19:48:24.317 +05:30 [DBG] Connection id "0HNL6OAP9I7QB" accepted.
+2026-04-30 19:48:24.324 +05:30 [DBG] Connection id "0HNL6OAP9I7QA" disconnecting.
+2026-04-30 19:48:24.336 +05:30 [DBG] Connection id "0HNL6OAP9I7QB" started.
+2026-04-30 19:48:24.339 +05:30 [DBG] Connection id "0HNL6OAP9I7QA" stopped.
+2026-04-30 19:48:24.343 +05:30 [DBG] Connection 0HNL6OAP9I7QB established using the following protocol: "Tls13"
+2026-04-30 19:48:24.344 +05:30 [DBG] Connection id "0HNL6OAP9I7QB" reset.
+2026-04-30 19:48:24.348 +05:30 [DBG] Connection id "0HNL6OAP9I7QB" request processing ended abnormally.
+System.IO.IOException: The decryption operation failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.IO.Pipelines.StreamPipeReader.<ReadInternalAsync>g__Core|40_0(StreamPipeReader reader, Nullable`1 minimumSize, CancellationTokenSource tokenSource, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:48:24.350 +05:30 [DBG] Connection id "0HNL6OAP9I7QB" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:48:24.365 +05:30 [DBG] Connection id "0HNL6OAP9I7QB" disconnecting.
+2026-04-30 19:48:24.368 +05:30 [DBG] Connection id "0HNL6OAP9I7QB" stopped.
+2026-04-30 19:49:29.638 +05:30 [DBG] Connection id "0HNL6OAP9I7QC" accepted.
+2026-04-30 19:49:29.640 +05:30 [DBG] Connection id "0HNL6OAP9I7QC" started.
+2026-04-30 19:49:29.654 +05:30 [DBG] Connection id "0HNL6OAP9I7QC" bad request data: "Detected a TLS handshake to an endpoint that does not have TLS enabled."
+Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException: Detected a TLS handshake to an endpoint that does not have TLS enabled.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.GetUnknownMethodLength(ReadOnlySpan`1 span)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.ParseRequestLine(TRequestHandler handler, ReadOnlySpan`1 requestLine)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.ParseRequestLine(TRequestHandler handler, SequenceReader`1& reader)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TakeStartLine(SequenceReader`1& reader)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.ParseRequest(SequenceReader`1& reader)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TryParseRequest(ReadResult result, Boolean& endConnection)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:49:29.663 +05:30 [DBG] Connection id "0HNL6OAP9I7QC" disconnecting.
+2026-04-30 19:49:29.664 +05:30 [DBG] Connection id "0HNL6OAP9I7QC" stopped.
+2026-04-30 19:49:29.665 +05:30 [DBG] Connection id "0HNL6OAP9I7QC" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:49:29.670 +05:30 [DBG] Connection id "0HNL6OAP9I7QD" accepted.
+2026-04-30 19:49:29.670 +05:30 [DBG] Connection id "0HNL6OAP9I7QD" started.
+2026-04-30 19:49:29.672 +05:30 [DBG] Connection id "0HNL6OAP9I7QD" bad request data: "Detected a TLS handshake to an endpoint that does not have TLS enabled."
+Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException: Detected a TLS handshake to an endpoint that does not have TLS enabled.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.GetUnknownMethodLength(ReadOnlySpan`1 span)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.ParseRequestLine(TRequestHandler handler, ReadOnlySpan`1 requestLine)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.ParseRequestLine(TRequestHandler handler, SequenceReader`1& reader)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TakeStartLine(SequenceReader`1& reader)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.ParseRequest(SequenceReader`1& reader)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TryParseRequest(ReadResult result, Boolean& endConnection)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:49:29.675 +05:30 [DBG] Connection id "0HNL6OAP9I7QD" disconnecting.
+2026-04-30 19:49:29.676 +05:30 [DBG] Connection id "0HNL6OAP9I7QD" received FIN.
+2026-04-30 19:49:29.676 +05:30 [DBG] Connection id "0HNL6OAP9I7QD" stopped.
+2026-04-30 19:49:29.678 +05:30 [DBG] Connection id "0HNL6OAP9I7QD" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:49:29.679 +05:30 [DBG] Connection id "0HNL6OAP9I7QE" accepted.
+2026-04-30 19:49:29.679 +05:30 [DBG] Connection id "0HNL6OAP9I7QE" started.
+2026-04-30 19:49:29.680 +05:30 [DBG] Connection id "0HNL6OAP9I7QE" bad request data: "Detected a TLS handshake to an endpoint that does not have TLS enabled."
+Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException: Detected a TLS handshake to an endpoint that does not have TLS enabled.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.GetUnknownMethodLength(ReadOnlySpan`1 span)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.ParseRequestLine(TRequestHandler handler, ReadOnlySpan`1 requestLine)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpParser`1.ParseRequestLine(TRequestHandler handler, SequenceReader`1& reader)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TakeStartLine(SequenceReader`1& reader)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.ParseRequest(SequenceReader`1& reader)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TryParseRequest(ReadResult result, Boolean& endConnection)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2026-04-30 19:49:29.683 +05:30 [DBG] Connection id "0HNL6OAP9I7QE" disconnecting.
+2026-04-30 19:49:29.683 +05:30 [DBG] Connection id "0HNL6OAP9I7QE" received FIN.
+2026-04-30 19:49:29.683 +05:30 [DBG] Connection id "0HNL6OAP9I7QE" stopped.
+2026-04-30 19:49:29.684 +05:30 [DBG] Connection id "0HNL6OAP9I7QE" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:50:42.440 +05:30 [DBG] Connection id "0HNL6OAP9I7QF" accepted.
+2026-04-30 19:50:42.447 +05:30 [DBG] Connection id "0HNL6OAP9I7QF" started.
+2026-04-30 19:50:42.452 +05:30 [DBG] Connection id "0HNL6OAP9I7QF" received FIN.
+2026-04-30 19:50:42.457 +05:30 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2026-04-30 19:50:42.458 +05:30 [DBG] Connection id "0HNL6OAP9I7QG" accepted.
+2026-04-30 19:50:42.466 +05:30 [DBG] Connection id "0HNL6OAP9I7QG" started.
+2026-04-30 19:50:42.467 +05:30 [DBG] Connection id "0HNL6OAP9I7QF" stopped.
+2026-04-30 19:50:42.468 +05:30 [DBG] Connection id "0HNL6OAP9I7QF" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:50:42.470 +05:30 [DBG] Connection 0HNL6OAP9I7QG established using the following protocol: "Tls13"
+2026-04-30 19:50:42.474 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/1.0/swagger.json - null null
+2026-04-30 19:50:42.500 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/1.0/swagger.json - 200 null application/json;charset=utf-8 25.4864ms
+2026-04-30 19:50:44.757 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/1.0/swagger.json - null null
+2026-04-30 19:50:44.780 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/1.0/swagger.json - 200 null application/json;charset=utf-8 22.675ms
+2026-04-30 19:52:57.486 +05:30 [DBG] Connection id "0HNL6OAP9I7QG" is closing.
+2026-04-30 19:52:57.491 +05:30 [DBG] Connection id "0HNL6OAP9I7QG" is closed. The last processed stream ID was 3.
+2026-04-30 19:52:57.504 +05:30 [DBG] Connection id "0HNL6OAP9I7QG" received FIN.
+2026-04-30 19:52:57.504 +05:30 [DBG] The connection queue processing loop for 0HNL6OAP9I7QG completed.
+2026-04-30 19:52:57.511 +05:30 [DBG] Connection id "0HNL6OAP9I7QG" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-30 19:52:57.536 +05:30 [DBG] Connection id "0HNL6OAP9I7QG" stopped.

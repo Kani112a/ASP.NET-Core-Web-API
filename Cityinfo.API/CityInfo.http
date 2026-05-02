@@ -1,0 +1,45 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@schema=http
+@hostname=localhost
+@port=5063
+
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities
+
+### //delimiter
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities
+Accept:application/xml
+
+###
+POST {{schema}}://{{hostname}}:{{port}}/api/v2/cities/1/pointsofinterest
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name":"Test",
+  "description":"Test description"
+}
+
+###
+
+@poiid={{createpoi.response.body.id}}
+
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities/1/pointsofinterest/{{poiid}}
+Accept: application/json
+
+###
+
+//get a token
+POST {{schema}}://{{hostname}}:{{port}}/api/authentication/authenticate
+Content-Type: application/json
+
+{
+  "username":"kanishka",
+  "password":"kanishka  pavithra"
+}
+
+###
+
+//authenticated get request
+
+GET {{schema}}://{{hostname}}:{{port}}/api/v2/cities
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZ2l2ZW5fbmFtZSI6ImthbmkiLCJmYW1pbHlfbmFtZSI6ImRvY2t4IiwiY2l0eSI6IkRoYXJtYXB1cmkiLCJuYmYiOjE3Nzc2MjIwMzQsImV4cCI6MTc3NzYyNTYzNCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDYzIiwiYXVkIjoiY2l0eWluZm9hcGkifQ.hHSA4kj-Xjv7_yaK9dD2CiIKo3Z0VnkP_RLs9RsJW4w

@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Asp.Versioning;
+using AutoMapper;
 using Cityinfo.API.Model;
 using Cityinfo.API.Service;
 using Microsoft.AspNetCore.Authorization;
@@ -12,7 +13,9 @@ namespace Cityinfo.API.Controllers
 {
     [ApiController]
     [Authorize]
-    [Route("api/cities")]
+    [ApiVersion(1)]
+    [ApiVersion(2)]
+    [Route("api/v{version:apiVersion}/cities")]
     //[Route("api/cities")]  //we can use but http is not supporting it is for https
     public class CitiesController : ControllerBase
     {
@@ -55,10 +58,19 @@ namespace Cityinfo.API.Controllers
             //return Ok(result);
             return Ok(_mapper.Map<IEnumerable<CityWithoutPointOfInterestDto>>(cityEntities));
         }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetCity(int id, bool includePointsOfInterest = false)
+        //xml comments
+        ///<summary>
+        ///Get a city by id
+        ///</summary>
+        ///<response code="200">Returns the request city</response>
+        [HttpGet("{cityId}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        
+        public async Task<IActionResult> GetCity(int cityId, bool includePointsOfInterest = false)
         {
-            var city = await _cityInfoRepository.GetCityAsync(id, includePointsOfInterest);
+            var city = await _cityInfoRepository.GetCityAsync(cityId, includePointsOfInterest);
 
             if (city == null)
             {
