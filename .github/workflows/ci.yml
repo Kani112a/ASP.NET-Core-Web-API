@@ -33,4 +33,4 @@ jobs:
         with:
           name: application-build
           path: |
-          **/bin/Release/**
+            **/bin/Release/**
