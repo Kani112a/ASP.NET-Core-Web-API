@@ -1,0 +1,29 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show repository files
+        run: ls -la
+
+      - name: Check Git version
+        run: git --version
+
+      - name: Build
+        run: echo "Building application..."
+
+      - name: Test
+        run: echo "Running tests..."
+
+      - name: Pipeline completed
+        run: echo "CI Pipeline completed successfully!"
