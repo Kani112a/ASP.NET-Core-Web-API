@@ -7,30 +7,29 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-      - name: Restore NuGet packages
-        run: nuget restore Cityinfo.sln
+      - name: Restore dependencies
+        run: dotnet restore Cityinfo.sln
 
       - name: Build application
-        run: msbuild Cityinfo.sln /p:Configuration=Release
+        run: dotnet build Cityinfo.sln --configuration Release --no-restore
 
       - name: Run tests
-        shell: powershell
-        run: |
-          Write-Host "Running tests"
-          Write-Host "Test completed"
+        run: dotnet test Cityinfo.sln --configuration Release --no-build
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: application-build
+          name: cityinfo-api-build
           path: |
             **/bin/Release/**
