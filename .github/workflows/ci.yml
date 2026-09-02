@@ -26,6 +26,18 @@ jobs:
 
       - name: Run tests
         run: dotnet test Cityinfo.sln --configuration Release --no-build
+      
+      - name: Use Github Secret
+        shell: bash
+        env: 
+          SECRET_NAME: ${{ secrets.SECRET_NAME }} 
+        run: |
+          if [ -n "$SECRET_NAME" ]; then
+           echo "Secret is available to the workflow." 
+          else 
+           echo "Secret is NOT available." 
+           exit 1 
+          fi
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
