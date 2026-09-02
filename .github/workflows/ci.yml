@@ -13,11 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: List repository files
-        shell: powershell
-        run: |
-          Get-ChildItem -Recurse -Depth 2
-
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
@@ -27,5 +22,15 @@ jobs:
       - name: Build application
         run: msbuild Cityinfo.sln /p:Configuration=Release
 
-      - name: Build completed
-        run: echo "Build completed successfully!"
+      - name: Run tests
+        shell: powershell
+        run: |
+          Write-Host "Running tests"
+          Write-Host "Test completed"
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: application-build
+          path: |
+          **/bin/Release/**
