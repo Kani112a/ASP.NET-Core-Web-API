@@ -1,0 +1,10 @@
+services:
+  cityinfo-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cityinfo-container
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
