@@ -6,8 +6,7 @@
     <UserSecretsId>dce43e40-05a1-4d10-b88d-3dfda974f94b</UserSecretsId>
     <TargetFramework>net8.0</TargetFramework>
     <OutputType>Exe</OutputType>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>CityInfo.API.xml</DocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
