@@ -35,29 +35,32 @@ pipeline {
             }
         }
 
-        stage('SonarQube Begin') {
-            steps {
-                withCredentials([
-                    string(
-                        credentialsId: 'sonarqube-token',
-                        variable: 'SONAR_TOKEN'
-                    )
-                ]) {
-                    sh '''
-                        docker run --rm \
-                          -e SONAR_TOKEN="$SONAR_TOKEN" \
-                          -v jenkins_home:/var/jenkins_home \
-                          -v dotnet_nuget_cache:/root/.nuget \
-                          -w "$WORKSPACE" \
-                          "$SDK_IMAGE" \
-                          dotnet sonarscanner begin \
-                            /k:"$SONAR_KEY" \
-                            /d:sonar.host.url="$SONAR_URL" \
-                            /d:sonar.token="$SONAR_TOKEN"
-                    '''
-                }
-            }
+        
+stage('SonarQube Begin') {
+    steps {
+        withCredentials([
+            string(
+                credentialsId: 'sonarqube-token',
+                variable: 'SONAR_TOKEN'
+            )
+        ]) {
+            sh '''
+                docker run --rm \
+                  --network devops-net \
+                  -e SONAR_TOKEN="$SONAR_TOKEN" \
+                  -v jenkins_home:/var/jenkins_home \
+                  -v dotnet_nuget_cache:/root/.nuget \
+                  -w "$WORKSPACE" \
+                  "$SDK_IMAGE" \
+                  dotnet sonarscanner begin \
+                    /k:"$SONAR_KEY" \
+                    /d:sonar.host.url="$SONAR_URL" \
+                    /d:sonar.token="$SONAR_TOKEN"
+            '''
         }
+    }
+}
+
 
         stage('Build') {
             steps {
@@ -86,27 +89,30 @@ pipeline {
             }
         }
 
-        stage('SonarQube End') {
-            steps {
-                withCredentials([
-                    string(
-                        credentialsId: 'sonarqube-token',
-                        variable: 'SONAR_TOKEN'
-                    )
-                ]) {
-                    sh '''
-                        docker run --rm \
-                          -e SONAR_TOKEN="$SONAR_TOKEN" \
-                          -v jenkins_home:/var/jenkins_home \
-                          -v dotnet_nuget_cache:/root/.nuget \
-                          -w "$WORKSPACE" \
-                          "$SDK_IMAGE" \
-                          dotnet sonarscanner end \
-                            /d:sonar.token="$SONAR_TOKEN"
-                    '''
-                }
-            }
+        
+stage('SonarQube End') {
+    steps {
+        withCredentials([
+            string(
+                credentialsId: 'sonarqube-token',
+                variable: 'SONAR_TOKEN'
+            )
+        ]) {
+            sh '''
+                docker run --rm \
+                  --network devops-net \
+                  -e SONAR_TOKEN="$SONAR_TOKEN" \
+                  -v jenkins_home:/var/jenkins_home \
+                  -v dotnet_nuget_cache:/root/.nuget \
+                  -w "$WORKSPACE" \
+                  "$SDK_IMAGE" \
+                  dotnet sonarscanner end \
+                    /d:sonar.token="$SONAR_TOKEN"
+            '''
         }
+    }
+}
+
 
         stage('Docker Build') {
             steps {
