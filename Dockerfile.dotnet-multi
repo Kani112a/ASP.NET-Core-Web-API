@@ -1,3 +1,4 @@
+
 FROM mcr.microsoft.com/dotnet/sdk:9.0
 
 USER root
@@ -8,3 +9,9 @@ RUN apt-get update \
     && curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh \
     && bash /tmp/dotnet-install.sh --channel 8.0 --install-dir /usr/share/dotnet \
     && rm /tmp/dotnet-install.sh
+
+# Install SonarScanner for .NET as a global tool
+RUN dotnet tool install --global dotnet-sonarscanner
+
+# Add global .NET tools to PATH
+ENV PATH="${PATH}:/root/.dotnet/tools"

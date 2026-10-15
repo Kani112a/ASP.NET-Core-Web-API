@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -7,8 +8,10 @@ pipeline {
 
     environment {
         IMAGE_NAME = 'cityinfo-api'
-        IMAGE_TAG = 'jenkins'
-        SDK_IMAGE = 'cityinfo-sdk-multi:local'
+        IMAGE_TAG  = 'jenkins'
+        SDK_IMAGE  = 'cityinfo-sdk-multi:local'
+        SONAR_KEY  = 'City-Info-API'
+        SONAR_URL  = 'http://sonarqube:9000'
     }
 
     stages {
@@ -29,6 +32,30 @@ pipeline {
                       "$SDK_IMAGE" \
                       dotnet restore Cityinfo.sln
                 '''
+            }
+        }
+
+        stage('SonarQube Begin') {
+            steps {
+                withCredentials([
+                    string(
+                        credentialsId: 'sonarqube-token',
+                        variable: 'SONAR_TOKEN'
+                    )
+                ]) {
+                    sh '''
+                        docker run --rm \
+                          -e SONAR_TOKEN="$SONAR_TOKEN" \
+                          -v jenkins_home:/var/jenkins_home \
+                          -v dotnet_nuget_cache:/root/.nuget \
+                          -w "$WORKSPACE" \
+                          "$SDK_IMAGE" \
+                          dotnet sonarscanner begin \
+                            /k:"$SONAR_KEY" \
+                            /d:sonar.host.url="$SONAR_URL" \
+                            /d:sonar.token="$SONAR_TOKEN"
+                    '''
+                }
             }
         }
 
@@ -54,8 +81,30 @@ pipeline {
                       -w "$WORKSPACE" \
                       "$SDK_IMAGE" \
                       dotnet test Cityinfo.sln --no-build \
-                      --logger "console;verbosity=normal"
+                        --logger "console;verbosity=normal"
                 '''
+            }
+        }
+
+        stage('SonarQube End') {
+            steps {
+                withCredentials([
+                    string(
+                        credentialsId: 'sonarqube-token',
+                        variable: 'SONAR_TOKEN'
+                    )
+                ]) {
+                    sh '''
+                        docker run --rm \
+                          -e SONAR_TOKEN="$SONAR_TOKEN" \
+                          -v jenkins_home:/var/jenkins_home \
+                          -v dotnet_nuget_cache:/root/.nuget \
+                          -w "$WORKSPACE" \
+                          "$SDK_IMAGE" \
+                          dotnet sonarscanner end \
+                            /d:sonar.token="$SONAR_TOKEN"
+                    '''
+                }
             }
         }
 
@@ -72,10 +121,10 @@ pipeline {
 
     post {
         success {
-            echo 'CI pipeline completed successfully.'
+            echo 'CI pipeline and SonarQube analysis completed successfully.'
         }
         failure {
-            echo 'CI pipeline failed. Check the stage logs.'
+            echo 'Pipeline failed. Check the stage logs.'
         }
         always {
             echo 'Pipeline execution finished.'
