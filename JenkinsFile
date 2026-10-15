@@ -79,7 +79,7 @@ stage('SonarQube Begin') {
 }
 
 
-       stage('Build') {
+stage('Build') {
     steps {
         sh '''
             docker run --rm \
@@ -87,7 +87,9 @@ stage('SonarQube Begin') {
               -v dotnet_nuget_cache:/root/.nuget \
               -w "$WORKSPACE" \
               "$SDK_IMAGE" \
-              dotnet build Cityinfo.sln --no-restore
+              dotnet build Cityinfo.sln \
+                --no-restore \
+                -v:normal
         '''
     }
 }
