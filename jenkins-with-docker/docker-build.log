@@ -1,0 +1,150 @@
+2026/10/15 15:01:22 http2: server: error reading preface from client //./pipe/dockerDesktopLinuxEngine: file has already been closed
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 262B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/jenkins/jenkins:lts
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM docker.io/jenkins/jenkins:lts@sha256:c1e4c349365f6d16d88595b2c5f7e8ff39b8ae1d061f62420bac193b4b9616d0
+#4 resolve docker.io/jenkins/jenkins:lts@sha256:c1e4c349365f6d16d88595b2c5f7e8ff39b8ae1d061f62420bac193b4b9616d0 0.0s done
+#4 CACHED
+
+#5 [2/2] RUN apt-get update     && apt-get install -y --no-install-recommends docker.io     && command -v docker     && docker --version     && rm -rf /var/lib/apt/lists/*
+#5 0.264 Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+#5 0.395 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#5 0.440 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#5 0.481 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+#5 2.076 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [4412 B]
+#5 2.113 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [267 kB]
+#5 2.602 Fetched 10.2 MB in 2s (4195 kB/s)
+#5 2.602 Reading package lists...
+#5 2.967 Reading package lists...
+#5 3.323 Building dependency tree...
+#5 3.416 Reading state information...
+#5 3.518 The following additional packages will be installed:
+#5 3.518   containerd iptables libip4tc2 libip6tc2 libmnl0 libnetfilter-conntrack3
+#5 3.518   libnfnetlink0 libnftnl11 libxtables12 netbase runc
+#5 3.519 Suggested packages:
+#5 3.519   containernetworking-plugins docker-doc aufs-tools btrfs-progs cgroupfs-mount
+#5 3.519   debootstrap e2fsprogs rinse rootlesskit xfsprogs zfs-fuse | zfsutils-linux
+#5 3.519   firewalld kmod
+#5 3.519 Recommended packages:
+#5 3.519   apparmor dbus-user-session docker-cli needrestart xz-utils nftables criu
+#5 3.569 The following NEW packages will be installed:
+#5 3.569   containerd docker.io iptables libip4tc2 libip6tc2 libmnl0
+#5 3.570   libnetfilter-conntrack3 libnfnetlink0 libnftnl11 libxtables12 netbase runc
+#5 3.838 0 upgraded, 12 newly installed, 0 to remove and 26 not upgraded.
+#5 3.838 Need to get 59.6 MB of archives.
+#5 3.838 After this operation, 233 MB of additional disk space will be used.
+#5 3.838 Get:1 http://deb.debian.org/debian trixie/main amd64 runc amd64 1.1.15+ds1-2+b4 [3230 kB]
+#5 4.902 Get:2 http://deb.debian.org/debian trixie/main amd64 containerd amd64 1.7.24~ds1-6+deb13u1 [32.8 MB]
+#5 18.96 Get:3 http://deb.debian.org/debian trixie/main amd64 libip4tc2 amd64 1.8.11-2 [20.0 kB]
+#5 18.96 Get:4 http://deb.debian.org/debian trixie/main amd64 libip6tc2 amd64 1.8.11-2 [20.3 kB]
+#5 18.96 Get:5 http://deb.debian.org/debian trixie/main amd64 libxtables12 amd64 1.8.11-2 [31.9 kB]
+#5 18.97 Get:6 http://deb.debian.org/debian trixie/main amd64 netbase all 6.5 [12.4 kB]
+#5 18.97 Get:7 http://deb.debian.org/debian trixie/main amd64 libmnl0 amd64 1.0.5-3 [11.9 kB]
+#5 18.97 Get:8 http://deb.debian.org/debian trixie/main amd64 libnfnetlink0 amd64 1.0.2-3 [14.4 kB]
+#5 18.97 Get:9 http://deb.debian.org/debian trixie/main amd64 libnetfilter-conntrack3 amd64 1.1.0-1 [42.1 kB]
+#5 18.99 Get:10 http://deb.debian.org/debian trixie/main amd64 libnftnl11 amd64 1.2.9-1 [65.0 kB]
+#5 19.02 Get:11 http://deb.debian.org/debian trixie/main amd64 iptables amd64 1.8.11-2 [361 kB]
+#5 19.17 Get:12 http://deb.debian.org/debian trixie/main amd64 docker.io amd64 26.1.5+dfsg1-9+deb13u1 [23.0 MB]
+#5 27.24 debconf: unable to initialize frontend: Dialog
+#5 27.24 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 27.24 debconf: falling back to frontend: Readline
+#5 27.24 debconf: unable to initialize frontend: Readline
+#5 27.24 debconf: (This frontend requires a controlling tty.)
+#5 27.24 debconf: falling back to frontend: Teletype
+#5 27.25 debconf: unable to initialize frontend: Teletype
+#5 27.25 debconf: (This frontend requires a controlling tty.)
+#5 27.25 debconf: falling back to frontend: Noninteractive
+#5 27.63 Fetched 59.6 MB in 24s (2529 kB/s)
+#5 27.64 Selecting previously unselected package runc.
+#5 27.64 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9616 files and directories currently installed.)
+#5 27.65 Preparing to unpack .../00-runc_1.1.15+ds1-2+b4_amd64.deb ...
+#5 27.65 Unpacking runc (1.1.15+ds1-2+b4) ...
+#5 27.79 Selecting previously unselected package containerd.
+#5 27.79 Preparing to unpack .../01-containerd_1.7.24~ds1-6+deb13u1_amd64.deb ...
+#5 27.79 Unpacking containerd (1.7.24~ds1-6+deb13u1) ...
+#5 28.24 Selecting previously unselected package libip4tc2:amd64.
+#5 28.24 Preparing to unpack .../02-libip4tc2_1.8.11-2_amd64.deb ...
+#5 28.25 Unpacking libip4tc2:amd64 (1.8.11-2) ...
+#5 28.28 Selecting previously unselected package libip6tc2:amd64.
+#5 28.28 Preparing to unpack .../03-libip6tc2_1.8.11-2_amd64.deb ...
+#5 28.29 Unpacking libip6tc2:amd64 (1.8.11-2) ...
+#5 28.32 Selecting previously unselected package libxtables12:amd64.
+#5 28.32 Preparing to unpack .../04-libxtables12_1.8.11-2_amd64.deb ...
+#5 28.33 Unpacking libxtables12:amd64 (1.8.11-2) ...
+#5 28.36 Selecting previously unselected package netbase.
+#5 28.36 Preparing to unpack .../05-netbase_6.5_all.deb ...
+#5 28.36 Unpacking netbase (6.5) ...
+#5 28.39 Selecting previously unselected package libmnl0:amd64.
+#5 28.40 Preparing to unpack .../06-libmnl0_1.0.5-3_amd64.deb ...
+#5 28.40 Unpacking libmnl0:amd64 (1.0.5-3) ...
+#5 28.43 Selecting previously unselected package libnfnetlink0:amd64.
+#5 28.43 Preparing to unpack .../07-libnfnetlink0_1.0.2-3_amd64.deb ...
+#5 28.44 Unpacking libnfnetlink0:amd64 (1.0.2-3) ...
+#5 28.47 Selecting previously unselected package libnetfilter-conntrack3:amd64.
+#5 28.47 Preparing to unpack .../08-libnetfilter-conntrack3_1.1.0-1_amd64.deb ...
+#5 28.47 Unpacking libnetfilter-conntrack3:amd64 (1.1.0-1) ...
+#5 28.51 Selecting previously unselected package libnftnl11:amd64.
+#5 28.51 Preparing to unpack .../09-libnftnl11_1.2.9-1_amd64.deb ...
+#5 28.51 Unpacking libnftnl11:amd64 (1.2.9-1) ...
+#5 28.54 Selecting previously unselected package iptables.
+#5 28.54 Preparing to unpack .../10-iptables_1.8.11-2_amd64.deb ...
+#5 28.55 Unpacking iptables (1.8.11-2) ...
+#5 28.60 Selecting previously unselected package docker.io.
+#5 28.60 Preparing to unpack .../11-docker.io_26.1.5+dfsg1-9+deb13u1_amd64.deb ...
+#5 28.62 Unpacking docker.io (26.1.5+dfsg1-9+deb13u1) ...
+#5 29.04 Setting up libip4tc2:amd64 (1.8.11-2) ...
+#5 29.05 Setting up libip6tc2:amd64 (1.8.11-2) ...
+#5 29.06 Setting up runc (1.1.15+ds1-2+b4) ...
+#5 29.07 Setting up libmnl0:amd64 (1.0.5-3) ...
+#5 29.08 Setting up libxtables12:amd64 (1.8.11-2) ...
+#5 29.09 Setting up libnfnetlink0:amd64 (1.0.2-3) ...
+#5 29.10 Setting up netbase (6.5) ...
+#5 29.13 Setting up containerd (1.7.24~ds1-6+deb13u1) ...
+#5 29.21 Setting up libnftnl11:amd64 (1.2.9-1) ...
+#5 29.22 Setting up libnetfilter-conntrack3:amd64 (1.1.0-1) ...
+#5 29.23 Setting up iptables (1.8.11-2) ...
+#5 29.24 update-alternatives: using /usr/sbin/iptables-legacy to provide /usr/sbin/iptables (iptables) in auto mode
+#5 29.25 update-alternatives: using /usr/sbin/ip6tables-legacy to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+#5 29.25 update-alternatives: using /usr/sbin/iptables-nft to provide /usr/sbin/iptables (iptables) in auto mode
+#5 29.25 update-alternatives: using /usr/sbin/ip6tables-nft to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+#5 29.26 update-alternatives: using /usr/sbin/arptables-nft to provide /usr/sbin/arptables (arptables) in auto mode
+#5 29.26 update-alternatives: using /usr/sbin/ebtables-nft to provide /usr/sbin/ebtables (ebtables) in auto mode
+#5 29.27 Setting up docker.io (26.1.5+dfsg1-9+deb13u1) ...
+#5 29.36 invoke-rc.d: could not determine current runlevel
+#5 29.37 invoke-rc.d: policy-rc.d denied execution of start.
+#5 29.52 Processing triggers for libc-bin (2.41-12+deb13u3) ...
+#5 ERROR: process "/bin/sh -c apt-get update     && apt-get install -y --no-install-recommends docker.io     && command -v docker     && docker --version     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 127
+------
+ > [2/2] RUN apt-get update     && apt-get install -y --no-install-recommends docker.io     && command -v docker     && docker --version     && rm -rf /var/lib/apt/lists/*:
+29.24 update-alternatives: using /usr/sbin/iptables-legacy to provide /usr/sbin/iptables (iptables) in auto mode
+29.25 update-alternatives: using /usr/sbin/ip6tables-legacy to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+29.25 update-alternatives: using /usr/sbin/iptables-nft to provide /usr/sbin/iptables (iptables) in auto mode
+29.25 update-alternatives: using /usr/sbin/ip6tables-nft to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+29.26 update-alternatives: using /usr/sbin/arptables-nft to provide /usr/sbin/arptables (arptables) in auto mode
+29.26 update-alternatives: using /usr/sbin/ebtables-nft to provide /usr/sbin/ebtables (ebtables) in auto mode
+29.27 Setting up docker.io (26.1.5+dfsg1-9+deb13u1) ...
+29.36 invoke-rc.d: could not determine current runlevel
+29.37 invoke-rc.d: policy-rc.d denied execution of start.
+29.52 Processing triggers for libc-bin (2.41-12+deb13u3) ...
+------
+Dockerfile:6
+--------------------
+   5 |     
+   6 | >>> RUN apt-get update \
+   7 | >>>     && apt-get install -y --no-install-recommends docker.io \
+   8 | >>>     && command -v docker \
+   9 | >>>     && docker --version \
+  10 | >>>     && rm -rf /var/lib/apt/lists/*
+  11 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update     && apt-get install -y --no-install-recommends docker.io     && command -v docker     && docker --version     && rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 127
