@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Environment Check') {
+            steps {
+                echo 'Repository checkout completed.'
+                echo 'Next: configure a .NET 8 SDK build environment.'
+                sh 'git --version'
+            }
+        }
+    }
+}

@@ -3,3 +3,11 @@ bin/
 obj/
 *.user
 *.suo
+
+# SonarQube analysis output
+.sonarqube/
+**/bin/
+**/obj/
+
+# Application logs
+Cityinfo.API/logs/
