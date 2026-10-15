@@ -1,19 +1,82 @@
+
 pipeline {
     agent any
+
+    options {
+        timestamps()
+    }
+
+    environment {
+        IMAGE_NAME = 'cityinfo-api'
+        IMAGE_TAG = 'jenkins'
+        SDK_IMAGE = 'mcr.microsoft.com/dotnet/sdk:9.0'
+    }
 
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                echo 'Source code is checked out by Jenkins SCM configuration.'
+                sh 'git status --short'
             }
         }
 
-        stage('Build Environment Check') {
+        stage('Restore') {
             steps {
-                echo 'Repository checkout completed.'
-                echo 'Next: configure a .NET 8 SDK build environment.'
-                sh 'git --version'
+                sh '''
+                    docker run --rm \
+                      -v jenkins_home:/var/jenkins_home \
+                      -w "$WORKSPACE" \
+                      "$SDK_IMAGE" \
+                      dotnet restore Cityinfo.sln
+                '''
             }
+        }
+
+        stage('Build') {
+            steps {
+                sh '''
+                    docker run --rm \
+                      -v jenkins_home:/var/jenkins_home \
+                      -w "$WORKSPACE" \
+                      "$SDK_IMAGE" \
+                      dotnet build Cityinfo.sln --no-restore
+                '''
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh '''
+                    docker run --rm \
+                      -v jenkins_home:/var/jenkins_home \
+                      -w "$WORKSPACE" \
+                      "$SDK_IMAGE" \
+                      dotnet test Cityinfo.sln --no-build \
+                      --logger "console;verbosity=normal"
+                '''
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh '''
+                    docker build \
+                      -t "$IMAGE_NAME:$IMAGE_TAG" \
+                      -f Dockerfile .
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'CI pipeline completed successfully.'
+        }
+        failure {
+            echo 'CI pipeline failed. Check the stage logs.'
+        }
+        always {
+            echo 'Pipeline execution finished.'
         }
     }
 }
