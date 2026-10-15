@@ -35,7 +35,24 @@ pipeline {
             }
         }
 
-        
+
+stage('SonarQube Auth Check') {
+    steps {
+        withCredentials([
+            string(
+                credentialsId: 'sonarqube-token',
+                variable: 'SONAR_TOKEN'
+            )
+        ]) {
+            sh '''
+                curl -sS \
+                  -u "$SONAR_TOKEN:" \
+                  "$SONAR_URL/api/authentication/validate"
+            '''
+        }
+    }
+}
+
 stage('SonarQube Begin') {
     steps {
         withCredentials([
@@ -61,22 +78,6 @@ stage('SonarQube Begin') {
     }
 }
 
-stage('SonarQube Auth Check') {
-    steps {
-        withCredentials([
-            string(
-                credentialsId: 'sonarqube-token',
-                variable: 'SONAR_TOKEN'
-            )
-        ]) {
-            sh '''
-                curl -sS \
-                  -u "$SONAR_TOKEN:" \
-                  "$SONAR_URL/api/authentication/validate"
-            '''
-        }
-    }
-}
 
         stage('Build') {
             steps {
