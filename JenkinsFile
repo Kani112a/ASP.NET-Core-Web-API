@@ -79,18 +79,18 @@ stage('SonarQube Begin') {
 }
 
 
-        stage('Build') {
-            steps {
-                sh '''
-                    docker run --rm \
-                      -v jenkins_home:/var/jenkins_home \
-                      -v dotnet_nuget_cache:/root/.nuget \
-                      -w "$WORKSPACE" \
-                      "$SDK_IMAGE" \
-                      dotnet build Cityinfo.sln --no-restore
-                '''
-            }
-        }
+       stage('Build') {
+    steps {
+        sh '''
+            docker run --rm \
+              -v jenkins_home:/var/jenkins_home \
+              -v dotnet_nuget_cache:/root/.nuget \
+              -w "$WORKSPACE" \
+              "$SDK_IMAGE" \
+              dotnet build Cityinfo.sln --no-restore
+        '''
+    }
+}
 
         stage('Test') {
             steps {
